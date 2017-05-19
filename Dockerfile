@@ -9,10 +9,10 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 RUN yum update -y
 
 # udpate repo
-ADD misc/compass_install.repo /etc/yum.repos.d/compass_install.repo
+#ADD misc/compass_install.repo /etc/yum.repos.d/compass_install.repo
 
 # Install packages
-RUN yum --enablerepo=compass_install --nogpgcheck install -y python python-devel git wget syslinux amqp mod_wsgi httpd bind rsync yum-utils gcc unzip openssl openssl098e ca-certificates mysql-devel mysql MySQL-python python-virtualenv python-setuptools python-pip bc libselinux-python libffi-devel openssl-devel vim net-tools
+RUN yum install -y python python-devel git wget syslinux amqp mod_wsgi httpd bind rsync yum-utils gcc unzip openssl openssl098e ca-certificates mysql-devel mysql MySQL-python python-virtualenv python-setuptools python-pip bc libselinux-python libffi-devel openssl-devel vim net-tools
 
 # Add code
 RUN mkdir -p /root/compass-deck
